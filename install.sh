@@ -2,19 +2,19 @@
 echo '<======开始安装======>'
 
 # 定义变量 WORKSPACE，值为用户目录下的 workspace
-WORKSPACE="$HOME/workspace/bin"
+WORKSPACE="$HOME/workspace"
 
 # 定义变量 BIN_DIR workspace/bin
-BIN_DIR="$HOME/workspace/bin"
+BIN_DIR="$WORKSPACE/bin"
 
 # 定义变量 SHELL_DIR，值为 BIN_DIR 变量的值 /shell
 SHELL_DIR="$BIN_DIR/shell"
 
-# 如果 WORKSPACE 不存在则创建该目录
-[[ ! -e $WORKSPACE ]] && mkdir -p $WORKSPACE
+# 如果 BIN_DIR 不存在则创建该目录
+[[ ! -e $BIN_DIR ]] && mkdir -p $BIN_DIR
 
-# 切换到 WORKSPACE 目录
-cd $WORKSPACE || exit 1
+# 切换到 BIN_DIR 目录
+cd $BIN_DIR || exit 1
 
 # 如果 SHELL_DIR 是目录
 if [[ -d $SHELL_DIR  ]]
@@ -45,6 +45,7 @@ exit_in_error() {
 	exit 1
 }
 
+# 添加 ~/workspace/bin/shell/bin 到 $PATH 环境变量
 write_path(){
   # 定义变量 SHELL_CONFIG
   local SHELL_CONFIG=""
