@@ -1,12 +1,7 @@
 {
   "name": "shell",
   "version": "0.0.1",
-  "scripts": {
-
-  },
-  "dependencies": {
-
-  },
-  "devDependencies": {
-  }
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
 }
